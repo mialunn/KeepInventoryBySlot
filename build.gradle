@@ -37,6 +37,12 @@ tasks.withType(JavaCompile).configureEach {
     }
 }
 
+jar {
+    manifest {
+        archiveFileName = "KeepInventoryBySlot-plugin.jar"
+    }
+}
+
 processResources {
     def props = [version: version]
     inputs.properties props
