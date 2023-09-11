@@ -37,5 +37,4 @@ jobs:
     - name: Upload build reports
       uses: actions/upload-artifact@v3
       with:
-        name: build-jar-file
-        path: build/libs/
+        path: build/libs/KeepInventoryBySlot-plugin.jar
