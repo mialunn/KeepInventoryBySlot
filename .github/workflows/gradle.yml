@@ -37,4 +37,5 @@ jobs:
     - name: Upload build reports
       uses: actions/upload-artifact@v3
       with:
+        name: 'plugin-zip'
         path: build/libs/KeepInventoryBySlot-plugin.jar
