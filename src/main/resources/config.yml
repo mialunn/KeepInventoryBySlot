@@ -1,3 +1,2 @@
 keep-inventory:
-  # Checking the slot number at https://proxy.spigotmc.org/3688e503e566241a19c46cd48cf3cba962c553fe?url=https%3A%2F%2Fwiki.vg%2Fimages%2Fthumb%2F1%2F13%2FInventory-slots.png%2F300px-Inventory-slots.png
-  slots: [36, 37, 38, 39, 40, 41, 42, 43, 44]
+  slots: [0, 1, 2, 3, 4, 5, 6, 7, 8]

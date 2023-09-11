@@ -2,3 +2,8 @@ name: KeepInventoryBySlot
 version: '${version}'
 main: com.minefh.keepinventorybyslot.KeepInventoryBySlot
 api-version: '1.19'
+
+commands:
+  kibs:
+    usage: /<command>
+    permission: "kibs.admin"
