@@ -13,6 +13,8 @@ public final class KeepInventoryBySlot extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        this.saveDefaultConfig();
+
         this.mainConfig = new MainConfig();
     }
 
