@@ -16,6 +16,8 @@ public final class KeepInventoryBySlot extends JavaPlugin {
         this.saveDefaultConfig();
 
         this.mainConfig = new MainConfig();
+
+        this.registerListeners();
     }
 
 

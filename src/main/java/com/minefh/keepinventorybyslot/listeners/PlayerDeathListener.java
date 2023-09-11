@@ -1,13 +1,14 @@
 package com.minefh.keepinventorybyslot.listeners;
 
 import com.minefh.keepinventorybyslot.config.MainConfig;
-import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+
+import java.util.List;
 
 public class PlayerDeathListener implements Listener {
 
@@ -22,11 +23,18 @@ public class PlayerDeathListener implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
         Player player = event.getPlayer();
-        Inventory playerInventory = player.getInventory();
+        PlayerInventory playerInventory = player.getInventory();
 
-        for (ItemStack item: playerInventory.getContents()) {
-            if (item != null)
-                player.sendMessage(Component.text(item.getType().toString()));
+        List<ItemStack> keepItems = event.getItemsToKeep();
+        List<ItemStack> dropItems = event.getDrops();
+        for (int i = 0; i < 9; i++) {
+            ItemStack itemAtSpecificSlot = playerInventory.getItem(i);
+            if (itemAtSpecificSlot == null) {
+                continue;
+            }
+            keepItems.add(itemAtSpecificSlot);
+            dropItems.remove(itemAtSpecificSlot);
+            player.sendMessage(itemAtSpecificSlot.getType().toString() + " has been kept! At slot " + i);
         }
     }
 }
